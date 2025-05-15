@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission Form - Five Brothers Education Consultants</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- WhatsApp Chat Button -->
+    <a href="https://wa.me/1234567890" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Navbar -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo-white.png" alt="Five Brothers Logo">
+                </a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <div class="nav-container">
+                <nav class="navbar">
+                    <ul class="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li class="dropdown">
+                            <a href="services.html">Services <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="study-abroad.html">Study Abroad Consulting</a></li>
+                                <li><a href="admission-guidance.html">Admission Guidance</a></li>
+                                <li><a href="visa-assistance.html">Visa Assistance</a></li>
+                                <li><a href="scholarships.html">Scholarships & Financial Aid</a></li>
+                                <li><a href="test-preparation.html">Test Preparation</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="destinations.html">Destinations <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="uk.html">United Kingdom</a></li>
+                                <li><a href="italy.html">Italy</a></li>
+                                <li><a href="china.html">China</a></li>
+                                <li><a href="turkey.html">Turkey</a></li>
+                                <li><a href="north-cyprus.html">North Cyprus</a></li>
+                                <li><a href="usa.html">USA</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="admission-form.html" class="active">Admission Form</a></li>
+                    </ul>
+                </nav>
+                <div class="nav-buttons">
+                    <a href="contact.html" class="btn btn-primary">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Admission Form Section -->
+    <section class="admission-section" id="admission-form">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Start Your Journey</span>
+                <h2 class="section-title">Admission Application</h2>
+                <div class="divider"></div>
+                <p class="section-description">Fill out the form below to begin your application process with Five Brothers Education Consultants.</p>
+            </div>
+            <div class="admission-grid">
+                <!-- Admission Form -->
+                <div class="admission-form">
+                    <h3>Admission Application Form</h3>
+                    <div class="form-message" id="form-message"></div>
+                    <form id="admission-form" action="https://formspree.io/f/manoaygy" method="post" enctype="multipart/form-data" class="form">
+                        <!-- Personal Information -->
+                        <h4>Personal Information</h4>
+                        <div class="form-group">
+                            <label for="full-name">Full Name <span class="required">*</span></label>
+                            <input type="text" id="full-name" name="full_name" required>
+                            <div class="error-message">Please enter your full name</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required>
+                            <div class="error-message">Please enter a valid email address</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number <span class="required">*</span></label>
+                            <input type="tel" id="phone" name="phone" required>
+                            <div class="error-message">Please enter a valid phone number</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="dob">Date of Birth <span class="required">*</span></label>
+                            <input type="date" id="dob" name="date_of_birth" required>
+                            <div class="error-message">Please select your date of birth</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="nationality">Nationality <span class="required">*</span></label>
+                            <input type="text" id="nationality" name="nationality" required>
+                            <div class="error-message">Please enter your nationality</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="gender">Gender <span class="required">*</span></label>
+                            <select id="gender" name="gender" required>
+                                <option value="" disabled selected>Select</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                                <option value="prefer-not-to-say">Prefer not to say</option>
+                            </select>
+                            <div class="error-message">Please select your gender</div>
+                        </div>
+
+                        <!-- Educational Background -->
+                        <h4>Educational Background</h4>
+                        <div class="form-group">
+                            <label for="qualification">Highest Qualification <span class="required">*</span></label>
+                            <input type="text" id="qualification" name="qualification" placeholder="e.g., High School, Bachelor's" required>
+                            <div class="error-message">Please enter your highest qualification</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="institution">Institution Name <span class="required">*</span></label>
+                            <input type="text" id="institution" name="institution" required>
+                            <div class="error-message">Please enter your institution name</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="grad-year">Graduation Year <span class="required">*</span></label>
+                            <input type="number" id="grad-year" name="graduation_year" min="1900" max="2025" required>
+                            <div class="error-message">Please enter a valid graduation year</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="grades">Grades/Percentage <span class="required">*</span></label>
+                            <input type="text" id="grades" name="grades" placeholder="e.g., 85%, GPA 3.5" required>
+                            <div class="error-message">Please enter your grades or percentage</div>
+                        </div>
+
+                        <!-- Program Preferences -->
+                        <h4>Program Preferences</h4>
+                        <div class="form-group">
+                            <label for="country">Desired Study Country <span class="required">*</span></label>
+                            <select id="country" name="country" required>
+                                <option value="" disabled selected>Select Country</option>
+                                <option value="UK">United Kingdom</option>
+                                <option value="Italy">Italy</option>
+                                <option value="China">China</option>
+                                <option value="Turkey">Turkey</option>
+                                <option value="North Cyprus">North Cyprus</option>
+                                <option value="USA">USA</option>
+                                <option value="Canada">Canada</option>
+                                <option value="Australia">Australia</option>
+                                <option value="Germany">Germany</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <div class="error-message">Please select your desired study country</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="program-type">Program Type <span class="required">*</span></label>
+                            <select id="program-type" name="program_type" required>
+                                <option value="" disabled selected>Select</option>
+                                <option value="bachelor">Bachelor's Degree</option>
+                                <option value="master">Master's Degree</option>
+                                <option value="diploma">Diploma/Certificate</option>
+                                <option value="phd">PhD</option>
+                                <option value="language-course">Language Course</option>
+                            </select>
+                            <div class="error-message">Please select your program type</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="start-date">Preferred Start Date <span class="required">*</span></label>
+                            <input type="date" id="start-date" name="start_date" required>
+                            <div class="error-message">Please select your preferred start date</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="field-of-study">Field of Study <span class="required">*</span></label>
+                            <input type="text" id="field-of-study" name="field_of_study" placeholder="e.g., Computer Science, Business Administration" required>
+                            <div class="error-message">Please enter your field of study</div>
+                        </div>
+
+                        <!-- Document Uploads -->
+                        <h4>Document Uploads</h4>
+                        <div class="form-group">
+                            <label for="passport">Passport Copy <span class="required">*</span></label>
+                            <input type="file" id="passport" name="passport" accept=".pdf,.jpg,.jpeg,.png" required>
+                            <small class="file-hint">(PDF, JPG, or PNG, max 5MB)</small>
+                            <div class="error-message">Please upload your passport copy</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="transcript">Academic Transcripts <span class="required">*</span></label>
+                            <input type="file" id="transcript" name="transcript" accept=".pdf,.jpg,.jpeg,.png" required>
+                            <small class="file-hint">(PDF, JPG, or PNG, max 5MB)</small>
+                            <div class="error-message">Please upload your academic transcripts</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="english-test">English Proficiency Test (e.g., IELTS, TOEFL)</label>
+                            <input type="file" id="english-test" name="english_test" accept=".pdf,.jpg,.jpeg,.png">
+                            <small class="file-hint">(PDF, JPG, or PNG, max 5MB)</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="cv">CV/Resume (Optional)</label>
+                            <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx">
+                            <small class="file-hint">(PDF or DOC, max 5MB)</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="recommendation">Recommendation Letter (Optional)</label>
+                            <input type="file" id="recommendation" name="recommendation" accept=".pdf,.doc,.docx">
+                            <small class="file-hint">(PDF or DOC, max 5MB)</small>
+                        </div>
+
+                        <!-- Additional Information -->
+                        <h4>Additional Information</h4>
+                        <div class="form-group">
+                            <label for="source">How Did You Hear About Us?</label>
+                            <select id="source" name="source">
+                                <option value="" disabled selected>Select</option>
+                                <option value="website">Website</option>
+                                <option value="social-media">Social Media</option>
+                                <option value="friend">Friend/Referral</option>
+                                <option value="advertisement">Advertisement</option>
+                                <option value="education-fair">Education Fair</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="comments">Additional Comments</label>
+                            <textarea id="comments" name="comments" rows="5" placeholder="Any additional information you'd like to share..."></textarea>
+                        </div>
+
+                        <!-- Terms and Conditions -->
+                        <div class="form-group terms-group">
+                            <input type="checkbox" id="terms" name="terms" required>
+                            <label for="terms">I agree to the <a href="terms.html" target="_blank">Terms and Conditions</a> and <a href="privacy.html" target="_blank">Privacy Policy</a> <span class="required">*</span></label>
+                            <div class="error-message">You must agree to the terms and conditions</div>
+                        </div>
+
+                        <!-- Hidden Fields for Formspree -->
+                        <input type="hidden" name="_next" value="http://yourdomain.com/thank-you.html">
+                        <input type="hidden" name="_subject" value="New Admission Form Submission">
+                        <input type="hidden" name="_replyto" id="replyto">
+
+                        <button type="submit" class="btn btn-primary" id="submit-btn">
+                            Submit Application
+                            <span class="spinner" id="spinner"></span>
+                        </button>
+                    </form>
+                </div>
+                <!-- Contact Details -->
+                <div class="contact-details">
+                    <h3>Contact Information</h3>
+                    <div class="detail-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Main Bazar, Katlang, Mardan, Khyber Pakhtunkhwa, Pakistan</p>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+92 123 456 7890</p>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>info@fivebrothers.edu</p>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-clock"></i>
+                        <p>Mon - Fri: 9:00 AM - 5:00 PM</p>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-info-circle"></i>
+                        <p>Please fill out all required fields (*) and ensure your documents are clear and readable.</p>
+                    </div>
+                    <div class="social-links">
+                        <h4>Follow Us</h4>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Begin Your Journey?</h2>
+            <p>Contact our team for personalized guidance or explore our services to learn more about studying abroad.</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+                <a href="services.html" class="btn btn-secondary">Explore Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-item">
+                    <h3>About Us</h3>
+                    <p>Five Brothers Education Consultants is your trusted partner for studying, working, and traveling abroad with over 10 years of experience helping students achieve their dreams.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><
+
+i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-item">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="blog.html">Blog & News</a></li>
+                        <li><a href="faq.html">FAQs</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-item">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><a href="study-abroad.html">Study Abroad</a></li>
+                        <li><a href="visa-assistance.html">Work Visa</a></li>
+                        <li><a href="visa-assistance.html">Visit Visa</a></li>
+                        <li><a href="scholarships.html">Scholarships</a></li>
+                        <li><a href="test-preparation.html">Test Preparation</a></li>
+                        <li><a href="admission-guidance.html">Career Counseling</a></li>
+                        <li><a href="services.html">Accommodation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-item">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter to get the latest updates on study abroad opportunities.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email Address" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Five Brothers Education Consultants. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top"><i class="fas fa-chevron-up"></i></a>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

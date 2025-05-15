@@ -629,9 +629,9 @@ header .container {
     font-size: 1.1rem;
 }
 
-.section-title {
+.section-title h2 {
     font-size: 2.5rem;
-    color: #ffffff;
+    color: #00264d;
     margin-bottom: 20px;
     line-height: 1.2;
 }

@@ -3,18 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Read the latest insights on studying, working, and traveling to UK, Italy, China, Turkey, North Cyprus, Saudi Arabia, and USA with Five Brothers Education Consultants.">
-    <meta name="keywords" content="study abroad, work abroad, visit visa, UK, Italy, China, Turkey, North Cyprus, Saudi Arabia, USA, Pakistan, education blog">
-    <title>Blog - Five Brothers Education Consultants</title>
+    <meta name="description" content="Expert insights on studying abroad in UK, Italy, China, Turkey, North Cyprus, Saudi Arabia, and USA with Five Brothers Education Consultants.">
+    <meta name="keywords" content="study abroad, international education, UK universities, Italy scholarships, China engineering programs, Turkey student visa, North Cyprus affordable education, USA study visa">
+    <title>Study Abroad Blog - Five Brothers Education Consultants</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        .blog-hero {
+            background-color: #0056b3;
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        .blog-hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        .blog-hero p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .btn-primary {
+            display: inline-block;
+            background-color: #ff7e00;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        .btn-primary:hover {
+            background-color: #e67100;
+        }
+        .blog-posts {
+            padding: 60px 0;
+        }
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        .blog-post {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .blog-post:hover {
+            transform: translateY(-5px);
+        }
+        .post-content {
+            padding: 25px;
+        }
+        .category {
+            display: inline-block;
+            background-color: #f0f7ff;
+            color: #0056b3;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        .post-content h4 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #222;
+        }
+        .post-content p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .post-meta {
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+        .post-meta i {
+            margin-right: 5px;
+        }
+        .btn-secondary {
+            display: inline-block;
+            border: 2px solid #0056b3;
+            color: #0056b3;
+            padding: 8px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        .btn-secondary:hover {
+            background-color: #0056b3;
+            color: white;
+        }
+        @media (max-width: 768px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+            .blog-hero h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- WhatsApp Chat Button -->
-    <a href="https://wa.me/1234567890" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
 
     <!-- navbar -->
     <header>
@@ -37,22 +152,22 @@
                     <li class="dropdown">
                         <a href="services.html">Services <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="study-abroad.html">Study Abroad Consulting</a></li>
-                            <li><a href="admission-guidance.html">Admission Guidance</a></li>
-                            <li><a href="visa-assistance.html">Visa Assistance</a></li>
-                            <li><a href="scholarships.html">Scholarships & Financial Aid</a></li>
-                            <li><a href="test-preparation.html">Test Preparation</a></li>
+                            <li><a href="services.html">Study Abroad Consulting</a></li>
+                            <li><a href="services.html">Admission Guidance</a></li>
+                            <li><a href="services.html">Visa Assistance</a></li>
+                            <li><a href="services.html">Scholarships & Financial Aid</a></li>
+                            <li><a href="services.html">Test Preparation</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
                         <a href="destinations.html">Destinations <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="uk.html">United Kingdom</a></li>
-                            <li><a href="italy.html">Italy</a></li>
-                            <li><a href="china.html">China</a></li>
-                            <li><a href="turkey.html">Turkey</a></li>
-                            <li><a href="north-cyprus.html">North Cyprus</a></li>
-                            <li><a href="usa.html">USA</a></li>
+                            <li><a href="destinations.html">United Kingdom</a></li>
+                            <li><a href="destinations.html">Italy</a></li>
+                            <li><a href="destinations.html">China</a></li>
+                            <li><a href="destinations.html">Turkey</a></li>
+                            <li><a href="destinations.html">North Cyprus</a></li>
+                            <li><a href="destinations.html">USA</a></li>
                         </ul>
                     </li>
                     <li><a href="blog.html">Blog</a></li>
@@ -69,9 +184,9 @@
     <!-- Hero Section -->
     <section class="blog-hero">
         <div class="container">
-            <h2>Explore Study, Work & Travel Insights</h2>
-            <p>Stay informed with tips, guides, and updates on studying, working, and visiting top destinations.</p>
-            <a href="contact.html" class="btn-primary">Get Expert Advice</a>
+            <h2>Your Gateway to Global Education</h2>
+            <p>Expert insights and practical guidance for Pakistani students pursuing education in top international destinations.</p>
+            <a href="contact.html" class="btn-primary">Book Free Consultation</a>
         </div>
     </section>
 
@@ -81,87 +196,106 @@
             <div class="blog-content">
                 <div class="blog-grid">
                     <div class="blog-post">
-                        <img src="images/uk-study.jpg" alt="UK Study">
                         <div class="post-content">
-                            <span class="category">Study Abroad</span>
-                            <h4>Why Study in the UK? Top Universities & Work Visas</h4>
-                            <p>Discover why Oxford, Cambridge, and UCL are top choices for Pakistani students, plus post-study work opportunities.</p>
+                            <span class="category">UK Education</span>
+                            <h4>Navigating the UK Student Visa Process: 2025 Updates</h4>
+                            <p>Complete guide to the latest UK student visa requirements, financial proofs, and interview preparation tips for Pakistani applicants.</p>
+                            <div class="post-meta">
+                                <span><i class="fas fa-calendar-alt"></i> June 5, 2025</span>
+                                <span><i class="fas fa-clock"></i> 8 min read</span>
+                            </div>
+                            <a href="destinations.html" class="btn-secondary">Read Guide</a>
+                        </div>
+                    </div>
+                    
+                    <div class="blog-post">
+                        <div class="post-content">
+                            <span class="category">Italy Study</span>
+                            <h4>Affordable Universities in Italy with English Programs</h4>
+                            <p>Discover Italian public universities offering quality education in English at a fraction of UK/US costs, plus scholarship opportunities.</p>
+                            <div class="post-meta">
+                                <span><i class="fas fa-calendar-alt"></i> May 28, 2025</span>
+                                <span><i class="fas fa-clock"></i> 6 min read</span>
+                            </div>
+                            <a href="destinations.html" class="btn-secondary">Explore Options</a>
+                        </div>
+                    </div>
+                    
+                    <div class="blog-post">
+                        <div class="post-content">
+                            <span class="category">China Study</span>
+                            <h4>Chinese Government Scholarships 2025: Complete Breakdown</h4>
+                            <p>Step-by-step application process for CSC scholarships covering tuition, accommodation and monthly stipends for Pakistani students.</p>
+                            <div class="post-meta">
+                                <span><i class="fas fa-calendar-alt"></i> May 20, 2025</span>
+                                <span><i class="fas fa-clock"></i> 10 min read</span>
+                            </div>
+                            <a href="destinations.html" class="btn-secondary">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="blog-post">
+                        <div class="post-content">
+                            <span class="category">Turkey Study</span>
+                            <h4>Why Turkish Universities Are Gaining Popularity</h4>
+                            <p>Analysis of Turkey's education system, visa advantages, and growing recognition of degrees from top universities like METU and Sabancı.</p>
+                            <div class="post-meta">
+                                <span><i class="fas fa-calendar-alt"></i> May 15, 2025</span>
+                                <span><i class="fas fa-clock"></i> 7 min read</span>
+                            </div>
+                            <a href="destinations.html" class="btn-secondary">Read Analysis</a>
+                        </div>
+                    </div>
+                    
+                    <div class="blog-post">
+                        <div class="post-content">
+                            <span class="category">North Cyprus</span>
+                            <h4>Cost Comparison: North Cyprus vs Pakistan Private Universities</h4>
+                            <p>Detailed financial breakdown showing how studying in North Cyprus can be more affordable than Pakistani private institutions with better facilities.</p>
                             <div class="post-meta">
                                 <span><i class="fas fa-calendar-alt"></i> May 10, 2025</span>
+                                <span><i class="fas fa-clock"></i> 9 min read</span>
                             </div>
-                            <a href="admission-form.html" class="btn-secondary">Apply Now</a>
+                            <a href="destinations.html" class="btn-secondary">See Comparison</a>
                         </div>
                     </div>
+                    
                     <div class="blog-post">
-                        <img src="images/italy-art.jpg" alt="Italy Study">
                         <div class="post-content">
-                            <span class="category">Study Abroad</span>
-                            <h4>Studying Art & Design in Italy on a Budget</h4>
-                            <p>Explore affordable tuition and English-taught programs at Sapienza and Politecnico for aspiring artists.</p>
+                            <span class="category">Saudi Arabia</span>
+                            <h4>KAUST Scholarship 2025: Requirements for Pakistani Students</h4>
+                            <p>Everything you need to know about King Abdullah University's prestigious scholarship program for STEM fields.</p>
                             <div class="post-meta">
                                 <span><i class="fas fa-calendar-alt"></i> May 5, 2025</span>
+                                <span><i class="fas fa-clock"></i> 5 min read</span>
                             </div>
-                            <a href="admission-form.html" class="btn-secondary">Get Started</a>
+                            <a href="destinations.html" class="btn-secondary">Check Requirements</a>
                         </div>
                     </div>
+                    
                     <div class="blog-post">
-                        <img src="images/china-tech.jpg" alt="China Study">
                         <div class="post-content">
-                            <span class="category">Study Abroad</span>
-                            <h4>Tech & Engineering in China: Scholarships Await</h4>
-                            <p>Learn about studying at Tsinghua and Peking with generous scholarships and cultural immersion.</p>
+                            <span class="category">USA Study</span>
+                            <h4>F1 Visa Interview: Common Questions & How to Answer</h4>
+                            <p>Prepare for your US student visa interview with these frequently asked questions and expert-recommended response strategies.</p>
                             <div class="post-meta">
                                 <span><i class="fas fa-calendar-alt"></i> April 28, 2025</span>
+                                <span><i class="fas fa-clock"></i> 6 min read</span>
                             </div>
-                            <a href="admission-form.html" class="btn-secondary">Learn More</a>
+                            <a href="destinations.html" class="btn-secondary">Prepare Now</a>
                         </div>
                     </div>
+                    
                     <div class="blog-post">
-                        <img src="images/turkey-culture.jpg" alt="Turkey Study">
                         <div class="post-content">
-                            <span class="category">Study Abroad</span>
-                            <h4>Why Turkey is Perfect for Pakistani Students</h4>
-                            <p>Affordable degrees, cultural proximity, and English programs at Bogazici and Koc universities.</p>
+                            <span class="category">Application Tips</span>
+                            <h4>How to Write a Winning Statement of Purpose</h4>
+                            <p>Our consultants reveal the formula for crafting compelling SOPs that get attention from admission committees abroad.</p>
                             <div class="post-meta">
                                 <span><i class="fas fa-calendar-alt"></i> April 20, 2025</span>
+                                <span><i class="fas fa-clock"></i> 12 min read</span>
                             </div>
-                            <a href="admission-form.html" class="btn-secondary">Plan Ahead</a>
-                        </div>
-                    </div>
-                    <div class="blog-post">
-                        <img src="images/north-cyprus.jpg" alt="North Cyprus Study">
-                        <div class="post-content">
-                            <span class="category">Study Abroad</span>
-                            <h4>North Cyprus: Affordable Education & Easy Visas</h4>
-                            <p>Study at EMU or NEU with low costs and a welcoming Mediterranean lifestyle for Pakistani students.</p>
-                            <div class="post-meta">
-                                <span><i class="fas fa-calendar-alt"></i> April 15, 2025</span>
-                            </div>
-                            <a href="admission-form.html" class="btn-secondary">Explore Now</a>
-                        </div>
-                    </div>
-                    <div class="blog-post">
-                        <img src="images/saudi-work.jpg" alt="Saudi Arabia Work">
-                        <div class="post-content">
-                            <span class="category">Work Abroad</span>
-                            <h4>Work in Saudi Arabia: Vision 2030 Opportunities</h4>
-                            <p>Discover work visas and study options at KAUST under Saudi Arabia’s Vision 2030 initiative.</p>
-                            <div class="post-meta">
-                                <span><i class="fas fa-calendar-alt"></i> April 10, 2025</span>
-                            </div>
-                            <a href="contact.html" class="btn-secondary">Inquire Now</a>
-                        </div>
-                    </div>
-                    <div class="blog-post">
-                        <img src="images/usa-visa.jpg" alt="USA Visit">
-                        <div class="post-content">
-                            <span class="category">Visit Visas</span>
-                            <h4>Visiting the USA: Guide to B1/B2 Visas</h4>
-                            <p>Learn how to apply for B1/B2 visas for tourism or business, plus study options at top universities.</p>
-                            <div class="post-meta">
-                                <span><i class="fas fa-calendar-alt"></i> April 5, 2025</span>
-                            </div>
-                            <a href="contact.html" class="btn-secondary">Apply Today</a>
+                            <a href="destinations.html" class="btn-secondary">Learn Formula</a>
                         </div>
                     </div>
                 </div>
@@ -169,62 +303,12 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta">
-        <div class="container">
-            <h2>Ready to Start Your Journey?</h2>
-            <p>Five Brothers Education Consultants guides you to study, work, or travel abroad with ease.</p>
-            <a href="admission-form.html" class="btn-primary">Apply for Study</a>
-            <a href="contact.html" class="btn-secondary">Contact for Work/Visit</a>
-        </div>
-    </section>
-
-    <!-- Contact Details Section -->
-    <section class="contact-section">
-        <div class="container">
-            <div class="contact-details">
-                <h3>Contact Information</h3>
-                <div class="detail-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <p>Main Bazar, Katlang, Mardan, Khyber Pakhtunkhwa, Pakistan</p>
-                </div>
-                <div class="detail-item">
-                    <i class="fas fa-phone"></i>
-                    <p>+92 123 456 7890</p>
-                </div>
-                <div class="detail-item">
-                    <i class="fas fa-envelope"></i>
-                    <p>info@fivebrothers.edu</p>
-                </div>
-                <div class="detail-item">
-                    <i class="fas fa-clock"></i>
-                    <p>Mon - Fri: 9:00 AM - 5:00 PM</p>
-                </div>
-                <div class="social-links">
-                    <h4>Follow Us</h4>
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-whatsapp"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-item">
                     <h3>About Us</h3>
                     <p>Five Brothers Education Consultants is your trusted partner for studying, working, and traveling abroad with over 10 years of experience helping students achieve their dreams.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
                 </div>
                 <div class="footer-item">
                     <h3>Quick Links</h3>
@@ -241,13 +325,13 @@
                 <div class="footer-item">
                     <h3>Our Services</h3>
                     <ul>
-                        <li><a href="#">Study Abroad</a></li>
-                        <li><a href="#">Work Visa</a></li>
-                        <li><a href="#">Visit Visa</a></li>
-                        <li><a href="#">Scholarships</a></li>
-                        <li><a href="#">Test Preparation</a></li>
-                        <li><a href="#">Career Counseling</a></li>
-                        <li><a href="#">Accommodation</a></li>
+                        <li><a href="services.html">Study Abroad</a></li>
+                        <li><a href="services.html">Work Visa</a></li>
+                        <li><a href="services.html">Visit Visa</a></li>
+                        <li><a href="services.html">Scholarships</a></li>
+                        <li><a href="services.html">Test Preparation</a></li>
+                        <li><a href="services.html">Career Counseling</a></li>
+                        <li><a href="services.html">Accommodation</a></li>
                     </ul>
                 </div>
                 <div class="footer-item">
@@ -264,7 +348,5 @@
             </div>
         </div>
     </footer>
-
-    <script src="js/script.js"></script>
 </body>
 </html>

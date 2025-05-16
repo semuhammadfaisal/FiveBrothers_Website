@@ -3,10 +3,198 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Five Brothers Education Consultants for study abroad guidance. Get in touch with our expert consultants today.">
+    <meta name="keywords" content="study abroad contact, education consultancy Pakistan, visa assistance contact, university application help">
     <title>Contact Us - Five Brothers Education Consultants</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Additional CSS for enhanced contact page */
+        .contact-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/educational-consultant.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+        }
+        
+        .contact-hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .contact-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .contact-section {
+            padding: 80px 0;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-form h3 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #2c3e50;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: #f8c537;
+            outline: none;
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .contact-details {
+            background: #f9f9f9;
+            padding: 40px;
+            border-radius: 10px;
+            height: 100%;
+        }
+        
+        .contact-details h3 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+        }
+        
+        .detail-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+        
+        .detail-item i {
+            color: #f8c537;
+            font-size: 1.2rem;
+            margin-right: 15px;
+            margin-top: 3px;
+        }
+        
+        .detail-item p {
+            margin: 0;
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .social-links {
+            margin-top: 30px;
+        }
+        
+        .social-links h4 {
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: #2c3e50;
+            color: white;
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: #f8c537;
+            transform: translateY(-3px);
+        }
+        
+        .map-container {
+            margin-top: 60px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+        }
+        
+        .form-message {
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            display: none;
+        }
+        
+        .form-message.success {
+            background: #d4edda;
+            color: #155724;
+            display: block;
+        }
+        
+        .form-message.error {
+            background: #f8d7da;
+            color: #721c24;
+            display: block;
+        }
+        
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-hero {
+                padding: 80px 20px;
+            }
+            
+            .contact-hero h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- WhatsApp Chat Button -->
@@ -16,60 +204,59 @@
 
     <!-- navbar -->
     <header>
-    <div class="container">
-        <div class="logo">
-            <a href="index.html">
-                <img src="images/logo-white.png" alt="Five Brothers Logo">
-            </a>
-        </div>
-        <div class="hamburger" id="hamburger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
-        <div class="nav-container">
-            <nav class="navbar">
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li class="dropdown">
-                        <a href="services.html">Services <i class="fas fa-chevron-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="study-abroad.html">Study Abroad Consulting</a></li>
-                            <li><a href="admission-guidance.html">Admission Guidance</a></li>
-                            <li><a href="visa-assistance.html">Visa Assistance</a></li>
-                            <li><a href="scholarships.html">Scholarships & Financial Aid</a></li>
-                            <li><a href="test-preparation.html">Test Preparation</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="destinations.html">Destinations <i class="fas fa-chevron-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="uk.html">United Kingdom</a></li>
-                            <li><a href="italy.html">Italy</a></li>
-                            <li><a href="china.html">China</a></li>
-                            <li><a href="turkey.html">Turkey</a></li>
-                            <li><a href="north-cyprus.html">North Cyprus</a></li>
-                            <li><a href="usa.html">USA</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="admission-form.html">Admission Form</a></li>
-                </ul>
-            </nav>
-            <div class="nav-buttons">
-                <a href="contact.html" class="btn btn-primary">Contact</a>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo-white.png" alt="Five Brothers Logo">
+                </a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <div class="nav-container">
+                <nav class="navbar">
+                    <ul class="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li class="dropdown">
+                            <a href="services.html">Services <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="study-abroad.html">Study Abroad Consulting</a></li>
+                                <li><a href="admission-guidance.html">Admission Guidance</a></li>
+                                <li><a href="visa-assistance.html">Visa Assistance</a></li>
+                                <li><a href="scholarships.html">Scholarships & Financial Aid</a></li>
+                                <li><a href="test-preparation.html">Test Preparation</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="destinations.html">Destinations <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="uk.html">United Kingdom</a></li>
+                                <li><a href="italy.html">Italy</a></li>
+                                <li><a href="china.html">China</a></li>
+                                <li><a href="turkey.html">Turkey</a></li>
+                                <li><a href="north-cyprus.html">North Cyprus</a></li>
+                                <li><a href="usa.html">USA</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="admission-form.html">Admission Form</a></li>
+                    </ul>
+                </nav>
+                <div class="nav-buttons">
+                    <a href="contact.html" class="btn btn-primary active">Contact</a>
+                </div>
             </div>
         </div>
-    </div>
-</header>
+    </header>
 
     <!-- Hero Section -->
     <section class="contact-hero">
         <div class="container">
-            <h2>Get in Touch with Us</h2>
-            <p>Have questions about studying abroad? Reach out to our team for personalized guidance!</p>
-            <a href="#contact-form" class="btn-primary">Contact Now</a>
+            <h1>Contact Five Brothers Education Consultants</h1>
+            <p class="subtitle">Our expert consultants are ready to guide you through your study abroad journey. Reach out today!</p>
         </div>
     </section>
 
@@ -81,60 +268,80 @@
                 <div class="contact-form">
                     <h3>Send Us a Message</h3>
                     <div class="form-message" id="form-message"></div>
-                    <form id="contact-form" action="https://formspree.io/f/xnndlqya" method="post" class="form">
+                    <form id="contact-form" action="https://formspree.io/f/xnndlqya" method="POST">
                         <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" name="name" required>
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required placeholder="Enter your full name">
                         </div>
                         <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" required>
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required placeholder="Enter your email address">
                         </div>
                         <div class="form-group">
                             <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone">
+                            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
                         </div>
                         <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" required>
+                            <label for="service">Service Interested In</label>
+                            <select id="service" name="service">
+                                <option value="">Select a service</option>
+                                <option value="Study Abroad">Study Abroad</option>
+                                <option value="Visa Assistance">Visa Assistance</option>
+                                <option value="Scholarships">Scholarships</option>
+                                <option value="Test Preparation">Test Preparation</option>
+                                <option value="Other">Other</option>
+                            </select>
                         </div>
                         <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <label for="country">Preferred Study Destination</label>
+                            <select id="country" name="country">
+                                <option value="">Select a country</option>
+                                <option value="UK">United Kingdom</option>
+                                <option value="Italy">Italy</option>
+                                <option value="China">China</option>
+                                <option value="Turkey">Turkey</option>
+                                <option value="North Cyprus">North Cyprus</option>
+                                <option value="USA">USA</option>
+                                <option value="Other">Other</option>
+                            </select>
                         </div>
-                        <button type="submit" class="btn-primary">Submit</button>
+                        <div class="form-group">
+                            <label for="message">Your Message *</label>
+                            <textarea id="message" name="message" required placeholder="How can we help you?"></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">Send Message</button>
                     </form>
                 </div>
+                
                 <!-- Contact Details -->
                 <div class="contact-details">
-                    <h3>Contact Information</h3>
-                    <div class="detail-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p>Main Bazar, Katlang, Mardan, Khyber Pakhtunkhwa, Pakistan</p>
-                    </div>
+                    <h3>Our Contact Information</h3>
                     <div class="detail-item">
                         <i class="fas fa-phone"></i>
-                        <p>+92 123 456 7890</p>
+                        <div>
+                            <p><strong>Phone:</strong></p>
+                            <p>0348 004 4556</p>
+                        </div>
                     </div>
                     <div class="detail-item">
                         <i class="fas fa-envelope"></i>
-                        <p>info@fivebrothers.edu</p>
+                        <div>
+                            <p><strong>Email:</strong></p>
+                            <p>Fb.educonsultant@gmail.com</p>
+                        </div>
                     </div>
                     <div class="detail-item">
                         <i class="fas fa-clock"></i>
-                        <p>Mon - Fri: 9:00 AM - 5:00 PM</p>
-                    </div>
-                    <div class="social-links">
-                        <h4>Follow Us</h4>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <div>
+                            <p><strong>Working Hours:</strong></p>
+                            <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
+                            <p>Saturday: 10:00 AM - 2:00 PM</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
     </section>
+
 
     <!-- Footer -->
     <footer>
@@ -143,13 +350,6 @@
                 <div class="footer-item">
                     <h3>About Us</h3>
                     <p>Five Brothers Education Consultants is your trusted partner for studying, working, and traveling abroad with over 10 years of experience helping students achieve their dreams.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
                 </div>
                 <div class="footer-item">
                     <h3>Quick Links</h3>
@@ -166,13 +366,13 @@
                 <div class="footer-item">
                     <h3>Our Services</h3>
                     <ul>
-                        <li><a href="#">Study Abroad</a></li>
-                        <li><a href="#">Work Visa</a></li>
-                        <li><a href="#">Visit Visa</a></li>
-                        <li><a href="#">Scholarships</a></li>
-                        <li><a href="#">Test Preparation</a></li>
-                        <li><a href="#">Career Counseling</a></li>
-                        <li><a href="#">Accommodation</a></li>
+                        <li><a href="services.html">Study Abroad</a></li>
+                        <li><a href="services.html">Work Visa</a></li>
+                        <li><a href="services.html">Visit Visa</a></li>
+                        <li><a href="services.html">Scholarships</a></li>
+                        <li><a href="services.html">Test Preparation</a></li>
+                        <li><a href="services.html">Career Counseling</a></li>
+                        <li><a href="services.html">Accommodation</a></li>
                     </ul>
                 </div>
                 <div class="footer-item">
@@ -191,5 +391,62 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script>
+        // Form submission handling
+        const contactForm = document.getElementById('contact-form');
+        const formMessage = document.getElementById('form-message');
+        
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(contactForm);
+            
+            fetch(contactForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    formMessage.innerHTML = 'Thank you! Your message has been sent successfully. We will contact you soon.';
+                    formMessage.className = 'form-message success';
+                    contactForm.reset();
+                } else {
+                    throw new Error('Network response was not ok');
+                }
+            })
+            .catch(error => {
+                formMessage.innerHTML = 'Oops! There was a problem sending your message. Please try again later or contact us directly.';
+                formMessage.className = 'form-message error';
+            });
+            
+            // Scroll to form message
+            formMessage.scrollIntoView({ behavior: 'smooth' });
+        });
+        
+        // FAQ accordion functionality
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const isOpen = question.classList.contains('active');
+                
+                // Close all other FAQs
+                faqQuestions.forEach(q => {
+                    q.classList.remove('active');
+                    q.nextElementSibling.style.maxHeight = null;
+                });
+                
+                // Open clicked FAQ if it wasn't open
+                if (!isOpen) {
+                    question.classList.add('active');
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                }
+            });
+        });
+    </script>
 </body>
 </html>

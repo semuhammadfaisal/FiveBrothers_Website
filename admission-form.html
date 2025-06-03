@@ -16,54 +16,53 @@
 
     <!-- Navbar -->
     <header>
-    <div class="container">
-        <div class="logo">
-            <a href="index.html">
-                <img src="images/logo-white.png" alt="Five Brothers Logo">
-            </a>
-        </div>
-        <div class="hamburger" id="hamburger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
-        <div class="nav-container">
-            <nav class="navbar">
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li class="dropdown">
-                        <a href="services.html">Services <i class="fas fa-chevron-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="services.html">Study Abroad Consulting</a></li>
-                            <li><a href="services.html">Admission Guidance</a></li>
-                            <li><a href="services.html">Visa Assistance</a></li>
-                            <li><a href="services.html">Scholarships & Financial Aid</a></li>
-                            <li><a href="services.html">Test Preparation</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="destinations.html">Destinations <i class="fas fa-chevron-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="destinations.html">United Kingdom</a></li>
-                            <li><a href="destinations.html">Italy</a></li>
-                            <li><a href="destinations.html">China</a></li>
-                            <li><a href="destinations.html">Turkey</a></li>
-                            <li><a href="destinations.html">North Cyprus</a></li>
-                            <li><a href="destinations.html">USA</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="admission-form.html">Admission Form</a></li>
-                </ul>
-            </nav>
-            <div class="nav-buttons">
-                <a href="contact.html" class="btn btn-primary">Contact</a>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo-white.png" alt="Five Brothers Logo">
+                </a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <div class="nav-container">
+                <nav class="navbar">
+                    <ul class="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li class="dropdown">
+                            <a href="services.html">Services <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="services.html">Study Abroad Consulting</a></li>
+                                <li><a href="services.html">Admission Guidance</a></li>
+                                <li><a href="services.html">Visa Assistance</a></li>
+                                <li><a href="services.html">Scholarships & Financial Aid</a></li>
+                                <li><a href="services.html">Test Preparation</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="destinations.html">Destinations <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="destinations.html">United Kingdom</a></li>
+                                <li><a href="destinations.html">Italy</a></li>
+                                <li><a href="destinations.html">China</a></li>
+                                <li><a href="destinations.html">Turkey</a></li>
+                                <li><a href="destinations.html">North Cyprus</a></li>
+                                <li><a href="destinations.html">USA</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="admission-form.html">Admission Form</a></li>
+                    </ul>
+                </nav>
+                <div class="nav-buttons">
+                    <a href="contact.html" class="btn btn-primary">Contact</a>
+                </div>
             </div>
         </div>
-    </div>
-</header>
-
+    </header>
 
     <!-- Admission Form Section -->
     <section class="admission-section" id="admission-form">
@@ -79,7 +78,7 @@
                 <div class="admission-form">
                     <h3>Admission Application Form</h3>
                     <div class="form-message" id="form-message"></div>
-                    <form id="admission-form" action="https://formspree.io/f/manoaygy" method="post" enctype="multipart/form-data" class="form">
+                    <form id="admission-form" action="https://formspree.io/f/manoaygy" method="POST" enctype="multipart/form-data" class="form">
                         <!-- Personal Information -->
                         <h4>Personal Information</h4>
                         <div class="form-group">
@@ -88,8 +87,8 @@
                             <div class="error-message">Please enter your full name</div>
                         </div>
                         <div class="form-group">
-                            <label for="email">Email Address <span class="required">*</span></label>
-                            <input type="email" id="email" name="email" required>
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email">
                             <div class="error-message">Please enter a valid email address</div>
                         </div>
                         <div class="form-group">
@@ -98,18 +97,18 @@
                             <div class="error-message">Please enter a valid phone number</div>
                         </div>
                         <div class="form-group">
-                            <label for="dob">Date of Birth <span class="required">*</span></label>
-                            <input type="date" id="dob" name="date_of_birth" required>
+                            <label for="dob">Date of Birth</label>
+                            <input type="date" id="dob" name="date_of_birth">
                             <div class="error-message">Please select your date of birth</div>
                         </div>
                         <div class="form-group">
-                            <label for="nationality">Nationality <span class="required">*</span></label>
-                            <input type="text" id="nationality" name="nationality" required>
+                            <label for="nationality">Nationality</label>
+                            <input type="text" id="nationality" name="nationality">
                             <div class="error-message">Please enter your nationality</div>
                         </div>
                         <div class="form-group">
-                            <label for="gender">Gender <span class="required">*</span></label>
-                            <select id="gender" name="gender" required>
+                            <label for="gender">Gender</label>
+                            <select id="gender" name="gender">
                                 <option value="" disabled selected>Select</option>
                                 <option value="male">Male</option>
                                 <option value="female">Female</option>
@@ -122,32 +121,31 @@
                         <!-- Educational Background -->
                         <h4>Educational Background</h4>
                         <div class="form-group">
-                            <label for="qualification">Highest Qualification <span class="required">*</span></label>
-                            <input type="text" id="qualification" name="qualification" placeholder="e.g., High School, Bachelor's" required>
+                            <label for="qualification">Highest Qualification</label>
+                            <input type="text" id="qualification" name="qualification" placeholder="e.g., High School, Bachelor's">
                             <div class="error-message">Please enter your highest qualification</div>
                         </div>
                         <div class="form-group">
-                            <label for="institution">Institution Name <span class="required">*</span></label>
-                            <input type="text" id="institution" name="institution" required>
+                            <label for="institution">Institution Name</label>
+                            <input type="text" id="institution" name="institution">
                             <div class="error-message">Please enter your institution name</div>
                         </div>
                         <div class="form-group">
-                            <label for="grad-year">Graduation Year <span class="required">*</span></label>
-                            <input type="number" id="grad-year" name="graduation_year" min="1900" max="2025" required>
+                            <label for="grad-year">Graduation Year</label>
+                            <input type="number" id="grad-year" name="graduation_year" min="1900" max="2025">
                             <div class="error-message">Please enter a valid graduation year</div>
                         </div>
                         <div class="form-group">
-                            <label for="grades">Grades/Percentage <span class="required">*</span></label>
-                            <input type="text" id="grades" name="grades" placeholder="e.g., 85%, GPA 3.5" required>
+                            <label for="grades">Grades/Percentage</label>
+                            <input type="text" id="grades" name="grades" placeholder="e.g., 85%, GPA 3.5">
                             <div class="error-message">Please enter your grades or percentage</div>
                         </div>
 
                         <!-- Program Preferences -->
                         <h4>Program Preferences</h4>
                         <div class="form-group">
-                            <label for="country">Desired Study Country <span class="required">*</span></label>
-                            <select id="country" name="country" required>
-                                <option value="" disabled selected>Select Country</option>
+                            <label for="countries">Desired Study Countries <span class="required">*</span></label>
+                            <select id="countries" name="countries[]" multiple required>
                                 <option value="UK">United Kingdom</option>
                                 <option value="Italy">Italy</option>
                                 <option value="China">China</option>
@@ -159,11 +157,12 @@
                                 <option value="Germany">Germany</option>
                                 <option value="Other">Other</option>
                             </select>
-                            <div class="error-message">Please select your desired study country</div>
+                            <small class="form-hint">Hold Ctrl (Windows) or Command (Mac) to select multiple countries. On mobile, tap each country to select or deselect.</small>
+                            <div class="error-message">Please select 3 to 4 countries</div>
                         </div>
                         <div class="form-group">
-                            <label for="program-type">Program Type <span class="required">*</span></label>
-                            <select id="program-type" name="program_type" required>
+                            <label for="program-type">Program Type</label>
+                            <select id="program-type" name="program_type">
                                 <option value="" disabled selected>Select</option>
                                 <option value="bachelor">Bachelor's Degree</option>
                                 <option value="master">Master's Degree</option>
@@ -174,44 +173,44 @@
                             <div class="error-message">Please select your program type</div>
                         </div>
                         <div class="form-group">
-                            <label for="start-date">Preferred Start Date <span class="required">*</span></label>
-                            <input type="date" id="start-date" name="start_date" required>
+                            <label for="start-date">Preferred Start Date</label>
+                            <input type="date" id="start-date" name="start_date">
                             <div class="error-message">Please select your preferred start date</div>
                         </div>
                         <div class="form-group">
-                            <label for="field-of-study">Field of Study <span class="required">*</span></label>
-                            <input type="text" id="field-of-study" name="field_of_study" placeholder="e.g., Computer Science, Business Administration" required>
+                            <label for="field-of-study">Field of Study</label>
+                            <input type="text" id="field-of-study" name="field_of_study" placeholder="e.g., Computer Science, Business Administration">
                             <div class="error-message">Please enter your field of study</div>
                         </div>
 
                         <!-- Document Uploads -->
                         <h4>Document Uploads</h4>
                         <div class="form-group">
-                            <label for="passport">Passport Copy <span class="required">*</span></label>
-                            <input type="file" id="passport" name="passport" accept=".pdf,.jpg,.jpeg,.png" required>
-                            <small class="file-hint">(PDF, JPG, or PNG, max 5MB)</small>
+                            <label for="passport">Passport Copy</label>
+                            <input type="file" id="passport" name="passport" accept=".pdf,.jpg,.jpeg,.png">
+                            <small class="form-hint">(PDF, JPG, or PNG, max 5MB)</small>
                             <div class="error-message">Please upload your passport copy</div>
                         </div>
                         <div class="form-group">
-                            <label for="transcript">Academic Transcripts <span class="required">*</span></label>
-                            <input type="file" id="transcript" name="transcript" accept=".pdf,.jpg,.jpeg,.png" required>
-                            <small class="file-hint">(PDF, JPG, or PNG, max 5MB)</small>
+                            <label for="transcript">Academic Transcripts</label>
+                            <input type="file" id="transcript" name="transcript" accept=".pdf,.jpg,.jpeg,.png">
+                            <small class="form-hint">(PDF, JPG, or PNG, max 5MB)</small>
                             <div class="error-message">Please upload your academic transcripts</div>
                         </div>
                         <div class="form-group">
                             <label for="english-test">English Proficiency Test (e.g., IELTS, TOEFL)</label>
                             <input type="file" id="english-test" name="english_test" accept=".pdf,.jpg,.jpeg,.png">
-                            <small class="file-hint">(PDF, JPG, or PNG, max 5MB)</small>
+                            <small class="form-hint">(PDF, JPG, or PNG, max 5MB)</small>
                         </div>
                         <div class="form-group">
-                            <label for="cv">CV/Resume (Optional)</label>
+                            <label for="cv">CV/Resume</label>
                             <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx">
-                            <small class="file-hint">(PDF or DOC, max 5MB)</small>
+                            <small class="form-hint">(PDF or DOC, max 5MB)</small>
                         </div>
                         <div class="form-group">
-                            <label for="recommendation">Recommendation Letter (Optional)</label>
+                            <label for="recommendation">Recommendation Letter</label>
                             <input type="file" id="recommendation" name="recommendation" accept=".pdf,.doc,.docx">
-                            <small class="file-hint">(PDF or DOC, max 5MB)</small>
+                            <small class="form-hint">(PDF or DOC, max 5MB)</small>
                         </div>
 
                         <!-- Additional Information -->
@@ -222,7 +221,7 @@
                                 <option value="" disabled selected>Select</option>
                                 <option value="website">Website</option>
                                 <option value="social-media">Social Media</option>
-                                <option value="friend">Friend/Referral</option>
+                                <option value="friend">Referral</option>
                                 <option value="advertisement">Advertisement</option>
                                 <option value="education-fair">Education Fair</option>
                                 <option value="other">Other</option>
@@ -230,13 +229,13 @@
                         </div>
                         <div class="form-group">
                             <label for="comments">Additional Comments</label>
-                            <textarea id="comments" name="comments" rows="5" placeholder="Any additional information you'd like to share..."></textarea>
+                            <textarea id="comments" name="comments" rows="5" placeholder="Any additional information you’d like to share..."></textarea>
                         </div>
 
                         <!-- Terms and Conditions -->
                         <div class="form-group terms-group">
-                            <input type="checkbox" id="terms" name="terms" required>
-                            <label for="terms">I agree to the <a href="terms.html" target="_blank">Terms and Conditions</a> and <a href="privacy.html" target="_blank">Privacy Policy</a> <span class="required">*</span></label>
+                            <input type="checkbox" id="terms" name="terms">
+                            <label for="terms">I agree to the <a href="terms.html" target="_blank">Terms and Conditions</a> and <a href="privacy.html" target="_blank">Privacy Policy</a></label>
                             <div class="error-message">You must agree to the terms and conditions</div>
                         </div>
 
@@ -260,7 +259,7 @@
                     </div>
                     <div class="detail-item">
                         <i class="fas fa-phone"></i>
-                        <p>Rasheed ahmad: 0348 004 4556</p>
+                        <p>Rasheed Ahmad: 0348 004 4556</p>
                     </div>
                     <div class="detail-item">
                         <i class="fas fa-envelope"></i>
@@ -272,7 +271,7 @@
                     </div>
                     <div class="detail-item">
                         <i class="fas fa-info-circle"></i>
-                        <p>Please fill out all required fields (*) and ensure your documents are clear and readable.</p>
+                        <p>Please fill out the required fields (*) and ensure your documents are clear and readable.</p>
                     </div>
                 </div>
             </div>

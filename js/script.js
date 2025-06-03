@@ -11,31 +11,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Dropdown menu toggle for mobile
-    // Dropdown menu toggle for mobile
-const dropdowns = document.querySelectorAll('.dropdown');
-dropdowns.forEach(dropdown => {
-    const dropdownToggle = dropdown.querySelector('a');
-    dropdownToggle.addEventListener('click', (e) => {
-        if (window.innerWidth <= 768) {
-            e.preventDefault();
-            const isActive = dropdown.classList.toggle('active');
-            // Close other dropdowns
-            dropdowns.forEach(otherDropdown => {
-                if (otherDropdown !== dropdown) {
-                    otherDropdown.classList.remove('active');
-                }
-            });
-        }
+    const dropdowns = document.querySelectorAll('.dropdown');
+    dropdowns.forEach(dropdown => {
+        const dropdownToggle = dropdown.querySelector('a');
+        dropdownToggle.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                const isActive = dropdown.classList.toggle('active');
+                // Close other dropdowns
+                dropdowns.forEach(otherDropdown => {
+                    if (otherDropdown !== dropdown) {
+                        otherDropdown.classList.remove('active');
+                    }
+                });
+            }
+        });
     });
-});
 
     // Close mobile menu when clicking a link
     const navLinks = document.querySelectorAll('.nav-links a');
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             if (window.innerWidth <= 768 && !link.parentElement.classList.contains('dropdown')) {
-                hamburger.classList.remove('active');
-                navContainer.classList.remove('active');
+                hamburger?.classList.remove('active');
+                navContainer?.classList.remove('active');
                 dropdowns.forEach(dropdown => dropdown.classList.remove('active'));
             }
         });
@@ -130,273 +129,248 @@ dropdowns.forEach(dropdown => {
         });
     });
 
-    // Counter animation for stats-counter and success-counter
-    const animateCounters = () => {
-        // Stats Counter (uses .stat-number with data-count)
-        const statNumbers = document.querySelectorAll('.stats-counter .stat-number');
-        statNumbers.forEach(stat => {
-            const target = parseInt(stat.getAttribute('data-count'));
-            let count = 0;
-            const increment = target / 100;
-            const isPercentage = stat.getAttribute('data-count') === '95';
+    // Unified counter animation function
+    function animateCounter(counterElement, target, isPercentage = false) {
+        let count = 0;
+        const increment = target / 100;
+        
+        function updateCounter() {
+            if (count < target) {
+                count += increment;
+                counterElement.innerText = Math.ceil(count) + (isPercentage ? '%' : '+');
+                requestAnimationFrame(updateCounter);
+            } else {
+                counterElement.innerText = target + (isPercentage ? '%' : '+');
+            }
+        }
+        
+        updateCounter();
+    }
 
-            const updateStat = () => {
-                if (count < target) {
-                    count += increment;
-                    stat.innerText = Math.ceil(count) + (isPercentage ? '%' : '+');
-                    requestAnimationFrame(updateStat);
-                } else {
-                    stat.innerText = target + (isPercentage ? '%' : '+');
-                }
-            };
-            updateStat();
-        });
-
-        // Success Counter (uses .counter-item h3 with predefined values)
-        const counterItems = document.querySelectorAll('.success-counter .counter-item h3');
-        const targets = [500, 200, 95]; // Students Placed, Partner Universities, Visa Success Rate
-        counterItems.forEach((counter, index) => {
-            let count = 0;
-            const target = targets[index];
-            const increment = target / 100;
-            const isPercentage = index === 2; // Visa Success Rate is percentage
-
-            const updateCounter = () => {
-                if (count < target) {
-                    count += increment;
-                    counter.innerText = Math.ceil(count) + (isPercentage ? '%' : '+');
-                    requestAnimationFrame(updateCounter);
-                } else {
-                    counter.innerText = target + (isPercentage ? '%' : '+');
-                }
-            };
-            updateCounter();
-        });
-    };
-
-    // Trigger counter animation when sections are in view
+    // Counter animation observer
     const counterObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                animateCounters();
+                // Stats Counter
+                document.querySelectorAll('.stats-counter .stat-number, .achievement-number').forEach(stat => {
+                    const target = parseInt(stat.getAttribute('data-count'));
+                    const isPercentage = stat.getAttribute('data-count')?.endsWith('%') || stat.getAttribute('data-count') === '95';
+                    animateCounter(stat, target, isPercentage);
+                });
+
+                // Success Counter
+                const successCounters = document.querySelectorAll('.success-counter .counter-item h3');
+                const targets = [500, 200, 95]; // Students Placed, Partner Universities, Visa Success Rate
+                successCounters.forEach((counter, index) => {
+                    animateCounter(counter, targets[index], index === 2);
+                });
+
                 counterObserver.unobserve(entry.target);
             }
         });
     }, { threshold: 0.5 });
 
-    const statsCounterSection = document.querySelector('.stats-counter');
-    const successCounterSection = document.querySelector('.success-counter');
-    if (statsCounterSection) counterObserver.observe(statsCounterSection);
-    if (successCounterSection) counterObserver.observe(successCounterSection);
-});
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('admission-form');
-    const submitBtn = document.getElementById('submit-btn');
-    const spinner = document.getElementById('spinner');
-    const formMessage = document.getElementById('form-message');
-    
-    // Set the replyto field to match the email field
-    const emailField = document.getElementById('email');
-    emailField.addEventListener('change', function() {
-        document.getElementById('replyto').value = this.value;
+    // Observe all counter sections
+    document.querySelectorAll('.stats-counter, .success-counter, .achievements-section').forEach(section => {
+        if (section) counterObserver.observe(section);
     });
-    
-    // Form validation
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Validate form
-        if (validateForm()) {
-            // Show loading spinner
-            submitBtn.classList.add('loading');
-            submitBtn.disabled = true;
-            
-            // Submit form via AJAX
-            const formData = new FormData(form);
-            
-            fetch(form.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            })
-            .then(response => {
-                if (response.ok) {
-                    // Show success message
-                    formMessage.textContent = 'Thank you! Your application has been submitted successfully. We will contact you shortly.';
-                    formMessage.className = 'form-message success';
-                    
-                    // Reset form
-                    form.reset();
-                } else {
-                    throw new Error('Form submission failed');
-                }
-            })
-            .catch(error => {
-                // Show error message
-                formMessage.textContent = 'There was an error submitting your form. Please try again or contact us directly.';
-                formMessage.className = 'form-message error';
-                console.error('Error:', error);
-            })
-            .finally(() => {
-                // Hide loading spinner
-                submitBtn.classList.remove('loading');
-                submitBtn.disabled = false;
-                
-                // Scroll to message
-                formMessage.scrollIntoView({ behavior: 'smooth' });
+
+    // Unified form handling
+    const admissionForm = document.getElementById('admission-form');
+    if (admissionForm) {
+        // Set the replyto field to match the email field
+        const emailField = document.getElementById('email');
+        if (emailField) {
+            emailField.addEventListener('change', function() {
+                document.getElementById('replyto').value = this.value;
             });
         }
-    });
-    
-    // Validate individual fields on blur
-    const requiredFields = form.querySelectorAll('[required]');
-    requiredFields.forEach(field => {
-        field.addEventListener('blur', function() {
-            validateField(this);
-        });
-    });
-    
-    // File input validation
-    const fileInputs = form.querySelectorAll('input[type="file"]');
-    fileInputs.forEach(input => {
-        input.addEventListener('change', function() {
-            validateFileInput(this);
-        });
-    });
-    
-    // Function to validate the entire form
-    function validateForm() {
-        let isValid = true;
-        
-        // Validate all required fields
-        requiredFields.forEach(field => {
-            if (!validateField(field)) {
+
+        // Form validation functions
+        function isValidEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+        function isValidPhone(phone) {
+            return /^[+]?[\d\s-]{8,}$/.test(phone);
+        }
+
+        function validateField(field) {
+            const formGroup = field.closest('.form-group');
+            const errorMessage = formGroup?.querySelector('.error-message');
+            
+            if (!formGroup || !errorMessage) return true;
+            
+            let isValid = true;
+            let message = 'This field is required';
+            
+            if (!field.value.trim()) {
                 isValid = false;
-            }
-        });
-        
-        // Validate file inputs
-        fileInputs.forEach(input => {
-            if (input.required && !validateFileInput(input)) {
+            } 
+            else if (field.type === 'email' && !isValidEmail(field.value)) {
                 isValid = false;
+                message = 'Please enter a valid email address';
             }
-        });
-        
-        return isValid;
-    }
-    
-    // Function to validate a single field
-    function validateField(field) {
-        const formGroup = field.closest('.form-group');
-        const errorMessage = formGroup.querySelector('.error-message');
-        
-        if (!field.value.trim()) {
-            formGroup.classList.add('error');
-            errorMessage.textContent = 'This field is required';
-            return false;
-        }
-        
-        // Special validation for email
-        if (field.type === 'email' && !isValidEmail(field.value)) {
-            formGroup.classList.add('error');
-            errorMessage.textContent = 'Please enter a valid email address';
-            return false;
-        }
-        
-        // Special validation for phone
-        if (field.id === 'phone' && !isValidPhone(field.value)) {
-            formGroup.classList.add('error');
-            errorMessage.textContent = 'Please enter a valid phone number';
-            return false;
-        }
-        
-        // Special validation for graduation year
-        if (field.id === 'grad-year') {
-            const year = parseInt(field.value);
-            if (isNaN(year) || year < 1900 || year > new Date().getFullYear()) {
-                formGroup.classList.add('error');
-                errorMessage.textContent = 'Please enter a valid graduation year';
-                return false;
+            else if (field.id === 'phone' && !isValidPhone(field.value)) {
+                isValid = false;
+                message = 'Please enter a valid phone number';
             }
-        }
-        
-        // If all validations pass
-        formGroup.classList.remove('error');
-        return true;
+            else if (field.id === 'grad-year') {
+                const year = parseInt(field.value);
+                if (isNaN(year) || year < 1900 || year > new Date().getFullYear()) {
+                    isValid = false;
+                    message = 'Please enter a valid graduation year';
+                }
+            }
+            else if (field.id === 'countries') {
+    const selected = field.selectedOptions.length;
+    if (selected < 3 || selected > 4) {
+        isValid = false;
+        message = 'Please select 3 to 4 countries';
     }
-    
-    // Function to validate file inputs
-    function validateFileInput(input) {
-        const formGroup = input.closest('.form-group');
-        const errorMessage = formGroup.querySelector('.error-message');
-        
-        if (input.required && !input.files.length) {
-            formGroup.classList.add('error');
-            errorMessage.textContent = 'This file is required';
-            return false;
-        }
-        
-        if (input.files.length) {
-            const file = input.files[0];
-            const validTypes = ['application/pdf', 'image/jpeg', 'image/png', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
-            const maxSize = 5 * 1024 * 1024; // 5MB
+}
             
-            if (!validTypes.includes(file.type)) {
+            if (!isValid) {
                 formGroup.classList.add('error');
-                errorMessage.textContent = 'Invalid file type. Please upload PDF, JPG, or PNG';
-                return false;
-            }
-            
-            if (file.size > maxSize) {
-                formGroup.classList.add('error');
-                errorMessage.textContent = 'File too large. Max size is 5MB';
-                return false;
-            }
-        }
-        
-        formGroup.classList.remove('error');
-        return true;
-    }
-    
-    // Helper function to validate email
-    function isValidEmail(email) {
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    }
-    
-    // Helper function to validate phone number (basic international format)
-    function isValidPhone(phone) {
-        return /^[+]?[\d\s-]{8,}$/.test(phone);
-    }
-});
-/* JavaScript for counter animation */
-document.addEventListener('DOMContentLoaded', function() {
-    const counters = document.querySelectorAll('.achievement-number');
-    const speed = 200;
-    
-    counters.forEach(counter => {
-        const target = +counter.getAttribute('data-count');
-        const count = +counter.innerText;
-        const increment = target / speed;
-        
-        if(count < target) {
-            counter.innerText = Math.ceil(count + increment);
-            setTimeout(updateCount, 1);
-        } else {
-            counter.innerText = target + (counter.getAttribute('data-count') === '95' ? '%' : '+');
-        }
-        
-        function updateCount() {
-            const count = +counter.innerText;
-            const increment = target / speed;
-            
-            if(count < target) {
-                counter.innerText = Math.ceil(count + increment);
-                setTimeout(updateCount, 1);
+                errorMessage.textContent = message;
+                errorMessage.style.display = 'block';
             } else {
-                counter.innerText = target + (counter.getAttribute('data-count') === '95' ? '%' : '+');
+                formGroup.classList.remove('error');
+                errorMessage.style.display = 'none';
             }
+            
+            return isValid;
         }
-    });
+
+        function validateFileInput(input) {
+            const formGroup = input.closest('.form-group');
+            const errorMessage = formGroup?.querySelector('.error-message');
+            
+            if (!formGroup || !errorMessage) return true;
+            
+            let isValid = true;
+            
+            if (input.required && !input.files.length) {
+                isValid = false;
+                errorMessage.textContent = 'This file is required';
+            }
+            else if (input.files.length) {
+                const file = input.files[0];
+                const validTypes = ['application/pdf', 'image/jpeg', 'image/png', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+                const maxSize = 5 * 1024 * 1024; // 5MB
+                
+                if (!validTypes.includes(file.type)) {
+                    isValid = false;
+                    errorMessage.textContent = 'Invalid file type. Please upload PDF, JPG, or PNG';
+                }
+                else if (file.size > maxSize) {
+                    isValid = false;
+                    errorMessage.textContent = 'File too large. Max size is 5MB';
+                }
+            }
+            
+            if (!isValid) {
+                formGroup.classList.add('error');
+                errorMessage.style.display = 'block';
+            } else {
+                formGroup.classList.remove('error');
+                errorMessage.style.display = 'none';
+            }
+            
+            return isValid;
+        }
+
+        // Validate individual fields on blur
+        const requiredFields = admissionForm.querySelectorAll('[required]');
+        requiredFields.forEach(field => {
+            field.addEventListener('blur', function() {
+                validateField(this);
+            });
+        });
+
+        // File input validation
+        const fileInputs = admissionForm.querySelectorAll('input[type="file"]');
+        fileInputs.forEach(input => {
+            input.addEventListener('change', function() {
+                validateFileInput(this);
+            });
+        });
+
+        // Form submission
+        admissionForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            let isValid = true;
+            
+            // Validate all required fields
+            requiredFields.forEach(field => {
+                if (!validateField(field)) {
+                    isValid = false;
+                }
+            });
+            
+            // Validate file inputs
+            fileInputs.forEach(input => {
+                if (input.required && !validateFileInput(input)) {
+                    isValid = false;
+                }
+            });
+            
+            if (isValid) {
+                const submitBtn = document.getElementById('submit-btn');
+                const spinner = document.getElementById('spinner');
+                const formMessage = document.getElementById('form-message');
+                
+                // Show loading spinner
+                if (submitBtn) {
+                    submitBtn.classList.add('loading');
+                    submitBtn.disabled = true;
+                }
+                if (spinner) spinner.style.display = 'inline-block';
+                
+                // Submit form via AJAX
+                const formData = new FormData(admissionForm);
+                
+                fetch(admissionForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                })
+                .then(response => {
+                    if (response.ok) {
+                        // Show success message
+                        if (formMessage) {
+                            formMessage.textContent = 'Thank you! Your application has been submitted successfully. We will contact you shortly.';
+                            formMessage.className = 'form-message success';
+                        }
+                        
+                        // Reset form
+                        admissionForm.reset();
+                    } else {
+                        throw new Error('Form submission failed');
+                    }
+                })
+                .catch(error => {
+                    // Show error message
+                    if (formMessage) {
+                        formMessage.textContent = 'There was an error submitting your form. Please try again or contact us directly.';
+                        formMessage.className = 'form-message error';
+                    }
+                    console.error('Error:', error);
+                })
+                .finally(() => {
+                    // Hide loading spinner
+                    if (submitBtn) {
+                        submitBtn.classList.remove('loading');
+                        submitBtn.disabled = false;
+                    }
+                    if (spinner) spinner.style.display = 'none';
+                    
+                    // Scroll to message
+                    if (formMessage) formMessage.scrollIntoView({ behavior: 'smooth' });
+                });
+            }
+        });
+    }
 });
